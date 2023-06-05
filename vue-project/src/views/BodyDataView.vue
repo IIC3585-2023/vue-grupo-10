@@ -1,21 +1,24 @@
 <script>
 import BodyDataForm from '../components/BodyDataForm.vue'
 import DailyCalories from '../components/DailyCalories.vue'
+import DietPreferencesForm from '../components/DietPreferencesForm.vue'
+import { useUserInfoStore } from '../stores/userInfo'
+
+
 export default {
     data() {
         return {
             caloryData: null,
-            bodyData: null
+            bodyData: null,
+            userInfoStore: useUserInfoStore()
         }
     },
     components: {
         BodyDataForm,
-        DailyCalories
+        DailyCalories,
+        DietPreferencesForm
     },
     methods: {
-        handleCaloryData(responseData) {
-            this.caloryData = responseData
-        },
         handleBodyData(formData) {
             this.bodyData = formData
         }
@@ -24,8 +27,9 @@ export default {
 </script>
 
 <template>
-  <div class="flex p-20 justify-evenly">
-    <BodyDataForm @caloryDataSubmitted="handleCaloryData" @bodyDataSubmitted="handleBodyData"/>
-    <DailyCalories :caloryData="caloryData" :bodyData="bodyData"/>
-  </div>
+    <div class="flex justify-evenly pt-20">
+        <BodyDataForm v-if="!userInfoStore.calories"/>
+        <DailyCalories v-if="userInfoStore.calories"/>
+        <DietPreferencesForm v-if="userInfoStore.calories"/>
+    </div>
 </template>

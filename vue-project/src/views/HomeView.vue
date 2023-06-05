@@ -1,7 +1,7 @@
 <template>
     <div class="flex items-center justify-around pt-20">
         <div>
-            <div class="grid max-w-2xl">
+            <div class="grid max-w-xl">
                 <h4 class="text-2xl font-bold text-green-300 text-justify">CalorieFit es una plataforma en línea que te ayuda a alcanzar tus objetivos de peso y mantener un estilo de vida saludable.</h4>
                 <br>
                 <h4 class="text-2xl font-bold text-green-500 text-justify">Obtén una estimación precisa de tus necesidades calóricas diarias y descubre recetas deliciosas y nutritivas que se adapten a tus preferencias y requerimientos.</h4>
@@ -15,7 +15,7 @@
                 </button>
             </RouterLink>
         </div>
-        <img class="rounded-2xl" src="../assets/logo_palta.png" alt="logo"/>
+        <img class="rounded-2xl w-1/2 max-w-xl" src="../assets/logo_palta.png" alt="logo"/>
     </div>
 </template>
 

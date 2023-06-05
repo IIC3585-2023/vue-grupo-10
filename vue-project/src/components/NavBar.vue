@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import { useUserInfoStore } from '../stores/userInfo'
+
+const userInfoStore = useUserInfoStore()
 </script>
 
 <template>
@@ -43,6 +46,7 @@ import { RouterLink } from 'vue-router'
         position: fixed;
         top: 0;
         left: 0;
+        z-index: 100;
     }
 
     ul {
